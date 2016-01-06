@@ -1,8 +1,8 @@
 # Site wide configuration
 
-title:            Site Title
+title:            Elizabeth Hau
 locale:           en_US
-url:
+url:  http://elizabethhau.github.io
 
 
 # Jekyll configuration
@@ -26,10 +26,10 @@ kramdown:
 
 # Site owner
 owner:
-  name: Your Name
+  name: Elizabeth Hau
   avatar: bio-photo.jpg
-  bio: "Describe your self."
-  email:
+  bio: "A senior at Wellesley College, aspiring software engineer, foodaholic, and dog lover."
+  email: elizabeth.hau@wellesley.edu
   disqus-shortname:
   twitter: #username
   facebook: #username
@@ -40,9 +40,9 @@ owner:
     ad-client:
     ad-slot:
   bing-verify:
-  github: #username
+  github: elizabethhau #username
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
-  linkedin: #username
+  linkedin: elizabethhau #username
   xing: #username
   instagram: #username
   lastfm: #username
