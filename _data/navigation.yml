@@ -1,13 +1,13 @@
 # Site navigation links
 
-- title: About
+- title: ABOUT
   url: /about/
 
-- title: Sample Posts
-  url: /posts/
+- title: PROJECTS
+  url: /projects/
 
-- title: Theme Setup
-  url: /theme-setup/
+- title: CONTACT ME
+  url: /contact/
 
-- title: Made Mistakes
-  url: http://mademistakes.com
+- title: GITHUB
+  url: https://github.com/elizabethhau
