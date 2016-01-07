@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: page
 title: About Me
 excerpt: "A minimal Jekyll theme by designer Michael Rose, adapted by Elizabeth Hau."
 image:
