@@ -3,8 +3,11 @@
 - title: PROJECTS
   url: /projects/
 
-# - title: CONTACT ME
-#   url: /contact/
+# - title: COURSE WORK
+#   url: /course-work/
+  
+- title: CONTACT ME
+  url: /contact/
 
 - title: GITHUB
   url: https://github.com/elizabethhau
