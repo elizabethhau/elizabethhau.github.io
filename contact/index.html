@@ -4,11 +4,40 @@ title: Contact Me
 date: 2016-01-07T16:48:48+08:00
 modified:
 excerpt:
+bootstrap: true
 tags: []
 image:
   feature:
 ---
+<div class = "page-header">Contact Me
+	<form action="http://formspree.io/elizabeth.hau@wellesley.edu" method="POST">
+		<div class = "panel-heading">
+			<fieldset>
+				<div class = "panel-content">
+				<table class = "table table-hover table-condensed">
+					<div class = "form-group">
+						<tr><td><input class = "form-control" type="text" name="name" placeholder="Name" required></td></tr>
+					</div>
+					<div class = "form-group">
+						<tr><td><input class = "form-control" type="email" name="_replyto" placeholder="Email" required></td></tr>
+					</div>
+					<div class = "form-group">
+						<tr><td>
+							<textarea name="message" placeholder="Write your message here" rows="5" cols="50" required></textarea><br><br>
+							<input type="text" name="_gotcha" style="display:none">
+							<input type="hidden" name="_subject" value="New Submission from Portfolio" />
+						</td></tr>
+					</div>
+				</table>
+				</div>
+				<button class="btn btn-success btn-info" type="submit" >Send</button>
+			</fieldset>
+		</div>
+	</form>
+</div>
 
+
+<!-- 
 <form action="http://formspree.io/elizabeth.hau@wellesley.edu" method="POST">
 
 <input type="text" name="name" placeholder="Name" required>
@@ -21,7 +50,9 @@ image:
 <input type="text" name="_gotcha" style="display:none">
 <input type="hidden" name="_subject" value="New Submission from Portfolio" />
 <button class="btn btn-success" type="submit">Send</button>
-</form>
+</form> -->
+
+
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->

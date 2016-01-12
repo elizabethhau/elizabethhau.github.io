@@ -6,6 +6,16 @@
 <head>
 <meta charset="utf-8">
 <title>Contact Me &#8211; Elizabeth Hau</title>
+    
+	<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
 
 <meta name="keywords" content="">
 
@@ -109,6 +119,11 @@
 				    
 				        
 				    
+				    <li><a href="http://elizabethhau.github.io/course-work/" >COURSE WORK</a></li>
+				
+				    
+				        
+				    
 				    <li><a href="http://elizabethhau.github.io/contact/" >CONTACT ME</a></li>
 				
 				    
@@ -162,7 +177,36 @@
   <article class="page">
     <h1>Contact Me</h1>
     <div class="article-wrap">
-      <form action="http://formspree.io/elizabeth.hau@wellesley.edu" method="POST">
+      <div class = "page-header">Contact Me
+	<form action="http://formspree.io/elizabeth.hau@wellesley.edu" method="POST">
+		<div class = "panel-heading">
+			<fieldset>
+				<div class = "panel-content">
+				<table class = "table table-hover table-condensed">
+					<div class = "form-group">
+						<tr><td><input class = "form-control" type="text" name="name" placeholder="Name" required></td></tr>
+					</div>
+					<div class = "form-group">
+						<tr><td><input class = "form-control" type="email" name="_replyto" placeholder="Email" required></td></tr>
+					</div>
+					<div class = "form-group">
+						<tr><td>
+							<textarea name="message" placeholder="Write your message here" rows="5" cols="50" required></textarea><br><br>
+							<input type="text" name="_gotcha" style="display:none">
+							<input type="hidden" name="_subject" value="New Submission from Portfolio" />
+						</td></tr>
+					</div>
+				</table>
+				</div>
+				<button class="btn btn-success btn-info" type="submit" >Send</button>
+			</fieldset>
+		</div>
+	</form>
+</div>
+
+
+<!-- 
+<form action="http://formspree.io/elizabeth.hau@wellesley.edu" method="POST">
 
 <input type="text" name="name" placeholder="Name" required>
 <p><p>
@@ -174,7 +218,9 @@
 <input type="text" name="_gotcha" style="display:none">
 <input type="hidden" name="_subject" value="New Submission from Portfolio" />
 <button class="btn btn-success" type="submit">Send</button>
-</form>
+</form> -->
+
+
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
