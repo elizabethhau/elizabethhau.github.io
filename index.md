@@ -9,3 +9,5 @@ image:
 ---
 
 I am a senior majoring in Computer Science and minoring in Mathematics at Wellesley College. I enjoy traveling, eating, and playing sports (tennis, figure skating, squash). I was an intern at Amazon last summer and spent the summer before working as a teaching assistant for Girls Who Code.
+
+[Here]({{site.baseurl}}{{post.url}}/assets/pdf/Hau_Elizabeth_Resume.pdf "Resume") is my resume
