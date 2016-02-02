@@ -9,7 +9,7 @@ url:  http://elizabethhau.github.io
 
 permalink:   /:categories/:title/
 markdown:    kramdown
-highlighter: pygments
+highlighter: rouge #pygments --> unsupported by GitHub pages
 sass:
   sass_dir: _sass
   style: compressed
