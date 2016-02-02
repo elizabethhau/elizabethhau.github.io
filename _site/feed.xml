@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://elizabethhau.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://elizabethhau.github.io" />
-<updated>2016-01-13T10:43:28+08:00</updated>
+<updated>2016-02-01T22:09:47-05:00</updated>
 <id>http://elizabethhau.github.io/</id>
 <author>
   <name>Elizabeth Hau</name>
@@ -19,8 +19,8 @@
   <title type="html"><![CDATA[Author Override]]></title>
   <link rel="alternate" type="text/html" href="http://elizabethhau.github.io/author-override/" />
   <id>http://elizabethhau.github.io/author-override</id>
-  <published>2014-07-31T00:00:00+08:00</published>
-  <updated>2014-07-31T00:00:00+08:00</updated>
+  <published>2014-07-31T00:00:00-04:00</published>
+  <updated>2014-07-31T00:00:00-04:00</updated>
   <author>
     <name>Billy Rick</name>
     <uri>http://elizabethhau.github.io</uri>
@@ -71,7 +71,7 @@
   <link rel="alternate" type="text/html" href="http://elizabethhau.github.io/code-highlighting-post/" />
   <id>http://elizabethhau.github.io/code-highlighting-post</id>
   <updated>2014-09-14T00:00:00-00:00</updated>
-  <published>2013-08-16T00:00:00+08:00</published>
+  <published>2013-08-16T00:00:00-04:00</published>
   
   <author>
     <name>Elizabeth Hau</name>
@@ -224,8 +224,8 @@ description: &amp;quot;An archive of posts sorted by tag.&amp;quot;
   <title type="html"><![CDATA[Sample Link Post]]></title>
   <link rel="alternate" type="text/html" href="http://elizabethhau.github.io/sample-link-post/" />
   <id>http://elizabethhau.github.io/sample-link-post</id>
-  <published>2013-08-12T00:00:00+08:00</published>
-  <updated>2013-08-12T00:00:00+08:00</updated>
+  <published>2013-08-12T00:00:00-04:00</published>
+  <updated>2013-08-12T00:00:00-04:00</updated>
   <author>
     <name>Elizabeth Hau</name>
     <uri>http://elizabethhau.github.io</uri>
@@ -251,8 +251,8 @@ description: &amp;quot;An archive of posts sorted by tag.&amp;quot;
   <title type="html"><![CDATA[Post with Large Feature Image and Text]]></title>
   <link rel="alternate" type="text/html" href="http://elizabethhau.github.io/readability-feature-post/" />
   <id>http://elizabethhau.github.io/readability-feature-post</id>
-  <published>2013-05-23T00:00:00+08:00</published>
-  <updated>2013-05-23T00:00:00+08:00</updated>
+  <published>2013-05-23T00:00:00-04:00</published>
+  <updated>2013-05-23T00:00:00-04:00</updated>
   <author>
     <name>Elizabeth Hau</name>
     <uri>http://elizabethhau.github.io</uri>
@@ -319,8 +319,8 @@ description: &amp;quot;An archive of posts sorted by tag.&amp;quot;
   <title type="html"><![CDATA[A Post with Images]]></title>
   <link rel="alternate" type="text/html" href="http://elizabethhau.github.io/sample-post-images/" />
   <id>http://elizabethhau.github.io/sample-post-images</id>
-  <published>2013-05-22T00:00:00+08:00</published>
-  <updated>2013-05-22T00:00:00+08:00</updated>
+  <published>2013-05-22T00:00:00-04:00</published>
+  <updated>2013-05-22T00:00:00-04:00</updated>
   <author>
     <name>Elizabeth Hau</name>
     <uri>http://elizabethhau.github.io</uri>
@@ -389,8 +389,8 @@ description: &amp;quot;An archive of posts sorted by tag.&amp;quot;
   <title type="html"><![CDATA[Testing Readability with a Bunch of Text]]></title>
   <link rel="alternate" type="text/html" href="http://elizabethhau.github.io/readability-post/" />
   <id>http://elizabethhau.github.io/readability-post</id>
-  <published>2012-05-22T00:00:00+08:00</published>
-  <updated>2012-05-22T00:00:00+08:00</updated>
+  <published>2012-05-22T00:00:00-04:00</published>
+  <updated>2012-05-22T00:00:00-04:00</updated>
   <author>
     <name>Elizabeth Hau</name>
     <uri>http://elizabethhau.github.io</uri>
@@ -450,7 +450,7 @@ description: &amp;quot;An archive of posts sorted by tag.&amp;quot;
   <link rel="alternate" type="text/html" href="http://elizabethhau.github.io/sample-post/" />
   <id>http://elizabethhau.github.io/sample-post</id>
   <updated>2013-05-31T00:00:00-00:00</updated>
-  <published>2011-03-10T00:00:00+08:00</published>
+  <published>2011-03-10T00:00:00-05:00</published>
   
   <author>
     <name>Elizabeth Hau</name>

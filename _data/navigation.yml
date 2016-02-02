@@ -1,5 +1,7 @@
 # Site navigation links
-
+- title: ABOUT ME
+  url: /
+  
 - title: PROJECTS
   url: /projects/
 
