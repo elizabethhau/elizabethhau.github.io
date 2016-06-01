@@ -157,7 +157,7 @@
 
 
   <h3 itemprop="name">Elizabeth Hau</h3>
-  <p>A senior majoring in Computer Science and minoring in Mathematics at Wellesley College</p>
+  <p>Recent graduate of Wellesley College, #aspiring software engineer, foodaholic, and dog lover.</p>
   <a href="mailto:elizabeth.hau@wellesley.edu" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
   
   
@@ -334,10 +334,10 @@ bundle exec jekyll serve</code></pre></div>
 
 <p>Examples:</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">http://mmistakes.github.io/minimal-mistakes</span>
-<span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">http://localhost:4000</span>
-<span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">//cooldude.github.io</span>
-<span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span></code></pre></div>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml">url: http://mmistakes.github.io/minimal-mistakes
+url: http://localhost:4000
+url: //cooldude.github.io
+url:</code></pre></div>
 
 <h4 id="google-analytics-and-webmaster-tools">Google Analytics and Webmaster Tools</h4>
 
@@ -347,11 +347,11 @@ bundle exec jekyll serve</code></pre></div>
 
 <p>To set what links appear in the top navigation edit <code>_data/navigation.yml</code>. Use the following format to set the URL and title for as many links as you’d like. <em>External links will open in a new window.</em></p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="p-Indicator">-</span> <span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Portfolio</span>
-  <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/portfolio/</span>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml">- title: Portfolio
+  url: /portfolio/
 
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Made Mistakes</span>
-  <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">http://mademistakes.com</span></code></pre></div>
+- title: Made Mistakes
+  url: http://mademistakes.com</code></pre></div>
 
 <hr />
 
@@ -359,23 +359,23 @@ bundle exec jekyll serve</code></pre></div>
 
 <p>While completely optional, I’ve included Octopress and some starter templates to automate the creation of new posts and pages. To take advantage of it start by installing the <a href="https://github.com/octopress/octopress">Octopress</a> gem if it isn’t already.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gem install octopress --pre</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">$ gem install octopress --pre</code></pre></div>
 
 <h3 id="new-post">New Post</h3>
 
 <p>Default command</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>octopress new post <span class="s2">&quot;Post Title&quot;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">$ octopress new post &quot;Post Title&quot;</code></pre></div>
 
 <p>Default works great if you want all your posts in one directory, but if you’re like me and want to group them into subfolders like <code>/posts</code>, <code>/portfolio</code>, etc. Then this is the command for you. By specifying the DIR it will create a new post in that folder and populate the <code>categories:</code> YAML with the same value.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>octopress new post <span class="s2">&quot;New Post Title&quot;</span> --dir posts</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">$ octopress new post &quot;New Post Title&quot; --dir posts</code></pre></div>
 
 <h3 id="new-page">New Page</h3>
 
 <p>To create a new page use the following command.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>octopress new page new-page/</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">$ octopress new page new-page/</code></pre></div>
 
 <p>This will create a page at <code>/new-page/index.md</code></p>
 
@@ -397,9 +397,9 @@ bundle exec jekyll serve</code></pre></div>
   <li>In <code>_config.yml</code> under <code>links:</code> rename the title and URL to the following:</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">links</span><span class="p-Indicator">:</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Writing</span>
-    <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/writing/</span></code></pre></div>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml">links:
+  - title: Writing
+    url: /writing/</code></pre></div>
 
 <ul>
   <li>Rename <code>posts/index.md</code> to <code>writing/index.md</code> and update the YAML front matter accordingly.</li>
@@ -412,16 +412,16 @@ bundle exec jekyll serve</code></pre></div>
 
 <p>The post and page layouts make the assumption that the feature images live in the <code>images/</code> folder. To add a feature image to a post or page just include the filename in the front matter like so. It’s probably best to host all your images from this folder, but you can hotlink from external sources if you desire.</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span>
-  <span class="l-Scalar-Plain">feature</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">feature-image-filename.jpg</span>
-  <span class="l-Scalar-Plain">thumb</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">thumbnail-image.jpg</span> <span class="c1">#keep it square 200x200 px is good</span></code></pre></div>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml">image:
+  feature: feature-image-filename.jpg
+  thumb: thumbnail-image.jpg #keep it square 200x200 px is good</code></pre></div>
 
 <p>To add attribution to a feature image use the following YAML front matter on posts or pages. Image credits appear directly below the feature image with a link back to the original source if supplied.</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span>
-  <span class="l-Scalar-Plain">feature</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">feature-image-filename.jpg</span>
-  <span class="l-Scalar-Plain">credit</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Michael Rose</span> <span class="c1">#name of the person or site you want to credit</span>
-  <span class="l-Scalar-Plain">creditlink</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">http://mademistakes.com</span> <span class="c1">#url to their site or licensing</span></code></pre></div>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml">image:
+  feature: feature-image-filename.jpg
+  credit: Michael Rose #name of the person or site you want to credit
+  creditlink: http://mademistakes.com #url to their site or licensing</code></pre></div>
 
 <h3 id="thumbnails-for-og-and-twitter-cards">Thumbnails for OG and Twitter Cards</h3>
 
@@ -435,30 +435,30 @@ bundle exec jekyll serve</code></pre></div>
 
 <p>Start by modifying <code>authors.yml</code> file in the <code>_data</code> folder and add your authors using the following format.</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="c1"># Authors</span>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"># Authors
 
-<span class="l-Scalar-Plain">billy_rick</span><span class="p-Indicator">:</span>
-  <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Billy Rick</span>
-  <span class="l-Scalar-Plain">web</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">http://thewhip.com</span>
-  <span class="l-Scalar-Plain">email</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">billy@rick.com</span>
-  <span class="l-Scalar-Plain">bio</span><span class="p-Indicator">:</span> <span class="s">&quot;What</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">you</span><span class="nv"> </span><span class="s">want,</span><span class="nv"> </span><span class="s">jewels?</span><span class="nv"> </span><span class="s">I</span><span class="nv"> </span><span class="s">am</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">very</span><span class="nv"> </span><span class="s">extravagant</span><span class="nv"> </span><span class="s">man.&quot;</span>
-  <span class="l-Scalar-Plain">avatar</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">bio-photo-2.jpg</span>
-  <span class="l-Scalar-Plain">twitter</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">extravagantman</span>
-  <span class="l-Scalar-Plain">google</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">plus</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">+BillyRick</span>
+billy_rick:
+  name: Billy Rick
+  web: http://thewhip.com
+  email: billy@rick.com
+  bio: &quot;What do you want, jewels? I am a very extravagant man.&quot;
+  avatar: bio-photo-2.jpg
+  twitter: extravagantman
+  google:
+    plus: +BillyRick
 
-<span class="l-Scalar-Plain">cornelius_fiddlebone</span><span class="p-Indicator">:</span>
-  <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Cornelius Fiddlebone</span>
-  <span class="l-Scalar-Plain">email</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">cornelius@thewhip.com</span>
-  <span class="l-Scalar-Plain">bio</span><span class="p-Indicator">:</span> <span class="s">&quot;I</span><span class="nv"> </span><span class="s">ordered</span><span class="nv"> </span><span class="s">what?&quot;</span>
-  <span class="l-Scalar-Plain">avatar</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">bio-photo.jpg</span>
-  <span class="l-Scalar-Plain">twitter</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">rhymeswithsackit</span>
-  <span class="l-Scalar-Plain">google</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">plus</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">+CorneliusFiddlebone</span></code></pre></div>
+cornelius_fiddlebone:
+  name: Cornelius Fiddlebone
+  email: cornelius@thewhip.com
+  bio: &quot;I ordered what?&quot;
+  avatar: bio-photo.jpg
+  twitter: rhymeswithsackit
+  google:
+    plus: +CorneliusFiddlebone</code></pre></div>
 
 <p>To assign Billy Rick as an author for our post. We’d add the following YAML front matter to a post:</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">author</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">billy_rick</span></code></pre></div>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml">author: billy_rick</code></pre></div>
 
 <h3 id="kramdown-table-of-contents">Kramdown Table of Contents</h3>
 
@@ -477,7 +477,7 @@ bundle exec jekyll serve</code></pre></div>
 
 <p>To disable the indents and add spacing between paragraphs change the following line in <code>_sass/variables.scss</code> from <code>true !default</code> to <code>false</code> like so.</p>
 
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">$</span><span class="nt">paragraph-indent</span><span class="o">:</span> <span class="nt">false</span><span class="o">;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-css" data-lang="css">$paragraph-indent: false;</code></pre></div>
 
 <figure>
   <img src="http://elizabethhau.github.io/images/paragraph-no-indent.png" alt="screen shot of paragraphs with indent style disabled" />
@@ -490,7 +490,7 @@ bundle exec jekyll serve</code></pre></div>
 
 <p>Not sure if this only effects Kramdown or if it’s an issue with Markdown in general. But adding YouTube video embeds causes errors when building your Jekyll site. To fix add a space between the <code>&lt;iframe&gt;</code> tags and remove <code>allowfullscreen</code>. Example below:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;iframe</span> <span class="na">width=</span><span class="s">&quot;560&quot;</span> <span class="na">height=</span><span class="s">&quot;315&quot;</span> <span class="na">src=</span><span class="s">&quot;http://www.youtube.com/embed/PWf4WUoMXwg&quot;</span> <span class="na">frameborder=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;/iframe&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html">&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;http://www.youtube.com/embed/PWf4WUoMXwg&quot; frameborder=&quot;0&quot;&gt; &lt;/iframe&gt;</code></pre></div>
 
 <h3 id="social-sharing-links">Social Sharing Links</h3>
 

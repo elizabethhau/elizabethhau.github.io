@@ -9,7 +9,7 @@ url:  http://elizabethhau.github.io
 
 permalink:   /:categories/:title/
 markdown:    kramdown
-highlighter: rouge #pygments --> unsupported by GitHub pages
+highlighter: false #rouge #pygments --> unsupported by GitHub pages
 sass:
   sass_dir: _sass
   style: compressed
@@ -28,7 +28,7 @@ kramdown:
 owner:
   name: Elizabeth Hau
   avatar: bio-photo-2.png
-  bio: "A senior majoring in Computer Science and minoring in Mathematics at Wellesley College"#aspiring software engineer, foodaholic, and dog lover.
+  bio: "Recent graduate of Wellesley College, #aspiring software engineer, foodaholic, and dog lover."
   email: elizabeth.hau@wellesley.edu
   disqus-shortname:
   twitter: #username
