@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem 'jekyll', '2.5.3'
+gem 'jekyll', '4.0.0'
 gem 'jekyll-sitemap'
 gem 'octopress', '~> 3.0'
-gem 'liquid', '~>2.6.3'
+gem 'liquid', '~>4.0.3'
