@@ -7,7 +7,7 @@ image:
   credit: Elizabeth Hau
   creditlink: http://elizabethhau.github.io/images/home-image.jpg
 ---
-I currently a masters student in  MIT's Leaders for Global Operations (LGO) program pursuing a dual degree in Electrical Engineering and Computer Science and MBA. Prior to graduate school, I was a software engineer at Wayfair for 4 years. I graduated from Wellesley College, where I received a BA in Computer Science and minor in Mathematics. W
+I am currently a masters student in  MIT's Leaders for Global Operations (LGO) program pursuing a dual degree in Electrical Engineering and Computer Science and MBA. Prior to graduate school, I was a software engineer at Wayfair for 4 years. I graduated from Wellesley College, where I received a BA in Computer Science and minor in Mathematics. W
 
 <br>
 I enjoy traveling, eating, and playing sports (tennis, figure skating, squash, skiing, snowboarding). 
