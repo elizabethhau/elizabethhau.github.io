@@ -10,4 +10,4 @@ image:
   creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
 ---
 
-I am a senior majoring in Computer Science and minoring in Mathematics at Wellesley College. I enjoy traveling, eating, and playing sports (tennis, figure skating, squash). I was an intern at Amazon last summer and spent the summer before working as a teaching assistant for Girls Who Code.
+I am a student in MIT's Leaders of Global Operations (LGO) program currently pursuing my masters degree in Electrical Engineering and Computer Science and MBA. I enjoy traveling, eating, and playing sports (tennis, figure skating, squash). Prior to graduate school, I was a software engineer at Wayfair for 4 years and a graduate of Wellesley Colege.
