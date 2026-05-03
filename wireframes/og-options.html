@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OG Image Options</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1a1d24;
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .label {
+    color: #8b949e;
+    font-size: 13px;
+    margin-bottom: 12px;
+    font-family: -apple-system, sans-serif;
+    text-align: center;
+  }
+
+  .og-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* All OG images are 1200×630 — displayed at 50% scale (600×315) */
+  .og {
+    width: 600px;
+    height: 315px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  /* ── OPTION A: Minimal — name + tagline, centered ── */
+  .og-a {
+    background: #0d1117;
+    background-image: radial-gradient(circle, #1e2530 1px, transparent 1px);
+    background-size: 28px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    border: 1px solid #30363d;
+  }
+
+  .og-a .name {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #e6edf3;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  .og-a .tagline {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    color: #8b949e;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+  }
+
+  .og-a .tagline span { color: #00ff88; }
+
+  .og-a .url {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 11px;
+    color: #484f58;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── OPTION B: Tagline-forward — tagline big, name secondary ── */
+  .og-b {
+    background: #0d1117;
+    background-image: radial-gradient(circle, #1e2530 1px, transparent 1px);
+    background-size: 28px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px 56px;
+    border: 1px solid #30363d;
+  }
+
+  .og-b .mono-label {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 11px;
+    color: #00ff88;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .og-b .line {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #e6edf3;
+  }
+
+  .og-b .line.accent { color: #00ff88; }
+
+  .og-b .name {
+    margin-top: 24px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 12px;
+    color: #8b949e;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── OPTION C: Split layout — left text, right accent block ── */
+  .og-c {
+    background: #0d1117;
+    background-image: radial-gradient(circle, #1e2530 1px, transparent 1px);
+    background-size: 28px 28px;
+    display: grid;
+    grid-template-columns: 1fr 180px;
+    border: 1px solid #30363d;
+    overflow: hidden;
+  }
+
+  .og-c .left {
+    padding: 44px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid #30363d;
+  }
+
+  .og-c .mono-label {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 10px;
+    color: #00ff88;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .og-c .name {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #e6edf3;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  .og-c .tagline {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px;
+    color: #8b949e;
+    line-height: 1.6;
+  }
+
+  .og-c .tagline span { color: #e6edf3; font-weight: 500; }
+
+  .og-c .right {
+    background: #00ff88;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 16px;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .og-c .right .initial {
+    font-family: -apple-system, sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    color: #0d1117;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .og-c .right .url {
+    font-family: 'SF Mono', monospace;
+    font-size: 9px;
+    color: #0d1117;
+    opacity: 0.6;
+    letter-spacing: 0.04em;
+    word-break: break-all;
+    text-align: center;
+  }
+
+  /* ── OPTION D: Dark + accent border top ── */
+  .og-d {
+    background: #0d1117;
+    background-image: radial-gradient(circle, #1e2530 1px, transparent 1px);
+    background-size: 28px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px 56px;
+    border: 1px solid #30363d;
+    border-top: 3px solid #00ff88;
+  }
+
+  .og-d .name {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #e6edf3;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+
+  .og-d .role {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 13px;
+    color: #00ff88;
+    letter-spacing: 0.04em;
+    margin-bottom: 20px;
+  }
+
+  .og-d .divider {
+    width: 40px;
+    height: 2px;
+    background: #30363d;
+    margin-bottom: 20px;
+  }
+
+  .og-d .tagline {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 15px;
+    color: #8b949e;
+    line-height: 1.6;
+  }
+
+  .og-d .tagline strong { color: #e6edf3; font-weight: 500; }
+</style>
+</head>
+<body>
+
+  <!-- OPTION A -->
+  <div class="og-wrapper">
+    <div class="label">Option A — Minimal centered</div>
+    <div class="og og-a">
+      <div class="name">Elizabeth Hau</div>
+      <div class="tagline">
+        <span>Software engineer.</span> Cloud architect. <span>AI engineer.</span>
+      </div>
+      <div class="url">elizabethhau.github.io</div>
+    </div>
+  </div>
+
+  <!-- OPTION B -->
+  <div class="og-wrapper">
+    <div class="label">Option B — Tagline-forward (each phrase on its own line)</div>
+    <div class="og og-b">
+      <div class="mono-label">// elizabethhau.github.io</div>
+      <div class="line accent">Software engineer.</div>
+      <div class="line">Cloud architect.</div>
+      <div class="line accent">AI engineer.</div>
+      <div class="name">Elizabeth Hau</div>
+    </div>
+  </div>
+
+  <!-- OPTION C -->
+  <div class="og-wrapper">
+    <div class="label">Option C — Split layout with accent block</div>
+    <div class="og og-c">
+      <div class="left">
+        <div class="mono-label">// elizabethhau.github.io</div>
+        <div class="name">Elizabeth Hau</div>
+        <div class="tagline">
+          <span>Software engineer.</span> Cloud architect. <span>AI engineer.</span><br>
+          The full stack, from infrastructure to intelligence.
+        </div>
+      </div>
+      <div class="right">
+        <div class="initial">EH</div>
+        <div class="url">elizabethhau.github.io</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPTION D -->
+  <div class="og-wrapper">
+    <div class="label">Option D — Name-forward with accent top border</div>
+    <div class="og og-d">
+      <div class="name">Elizabeth Hau</div>
+      <div class="role">AI Architect & Engineer · J&J Vision</div>
+      <div class="divider"></div>
+      <div class="tagline">
+        <strong>Software engineer.</strong> Cloud architect. <strong>AI engineer.</strong>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

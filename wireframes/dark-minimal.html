@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wireframe B — Dark/Minimal</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #111318;
+    --bg-surface: #1a1d24;
+    --bg-card: #1e2128;
+    --border: #2a2d35;
+    --accent: #6c8ef5;
+    --accent-soft: rgba(108, 142, 245, 0.12);
+    --text-primary: #f0f2f7;
+    --text-secondary: #8892a4;
+    --text-muted: #555d6e;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'SF Mono', 'Fira Code', monospace;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 64px;
+    background: rgba(17, 19, 24, 0.9);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-logo {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+
+  .nav-links { display: flex; gap: 36px; }
+  .nav-links a {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  .nav-links a:hover { color: var(--text-primary); }
+
+  /* HERO */
+  .hero {
+    padding: 120px 64px 96px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 28px;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: var(--accent);
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+  }
+
+  .hero-tagline {
+    font-size: 20px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-tagline strong { color: var(--accent); font-weight: 500; }
+
+  .hero-sub {
+    font-size: 15px;
+    color: var(--text-muted);
+    max-width: 500px;
+    margin-bottom: 48px;
+    line-height: 1.7;
+  }
+
+  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    padding: 12px 28px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 0.01em;
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--text-secondary);
+    padding: 12px 28px;
+    font-size: 14px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .btn-outline:hover { border-color: var(--accent); color: var(--text-primary); }
+
+  /* SECTIONS */
+  section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 80px 64px;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-eyebrow {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  h2 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 48px;
+    color: var(--text-primary);
+  }
+
+  /* ABOUT */
+  .about-text {
+    font-size: 17px;
+    color: var(--text-secondary);
+    max-width: 640px;
+    line-height: 1.8;
+  }
+
+  .about-text strong { color: var(--text-primary); font-weight: 500; }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .skill-group {
+    background: var(--bg-surface);
+    padding: 24px 28px;
+  }
+
+  .skill-group-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .skill-tag {
+    font-size: 13px;
+    color: var(--text-secondary);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 5px 12px;
+    border-radius: 4px;
+  }
+
+  /* EXPERIENCE */
+  .exp-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .exp-meta { padding-top: 4px; }
+
+  .exp-company {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+
+  .exp-period {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .exp-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+  }
+
+  .exp-content p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .project-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px;
+    transition: border-color 0.15s;
+  }
+
+  .project-card:hover { border-color: var(--accent); }
+
+  .project-tag {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .project-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+  }
+
+  .project-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .project-metric {
+    margin-top: 16px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  /* CONTACT */
+  .contact-block {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 56px;
+    text-align: center;
+  }
+
+  .contact-block p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 400px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">Elizabeth Hau</span>
+  <div class="nav-links">
+    <a href="#">About</a>
+    <a href="#">Skills</a>
+    <a href="#">Experience</a>
+    <a href="#">Projects</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Available for opportunities</div>
+  <h1>Elizabeth Hau</h1>
+  <p class="hero-tagline">
+    <strong>Software engineer.</strong> Cloud architect. <strong>AI engineer.</strong>
+  </p>
+  <p class="hero-sub">
+    The full stack, from infrastructure to intelligence.
+  </p>
+  <div class="hero-ctas">
+    <button class="btn-primary">Download Resume</button>
+    <button class="btn-outline">Get in Touch</button>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section>
+  <div class="section-eyebrow">About</div>
+  <h2>Building AI systems end-to-end</h2>
+  <p class="about-text">
+    AI Architect & Engineer at <strong>J&J Vision</strong>, designing and building cloud-native data and AI systems for global supply chain operations.
+    Former Software Engineer at <strong>Wayfair</strong> (Transportation Last Mile).
+    <strong>MIT LGO</strong> — dual CS + MBA. I design the systems I build.
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section>
+  <div class="section-eyebrow">Skills & Tech</div>
+  <h2>What I work with</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-title">Languages</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Java</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Cloud & Data</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Databricks</span>
+        <span class="skill-tag">Spark</span>
+        <span class="skill-tag">Azure</span>
+        <span class="skill-tag">Lakehouse</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">AI / ML</div>
+      <div class="skill-tags">
+        <span class="skill-tag">GenAI</span>
+        <span class="skill-tag">RAG</span>
+        <span class="skill-tag">Scikit-learn</span>
+        <span class="skill-tag">Keras</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section>
+  <div class="section-eyebrow">Experience</div>
+  <h2>Where I've worked</h2>
+
+  <div class="exp-item">
+    <div class="exp-meta">
+      <div class="exp-company">J&J Vision</div>
+      <div class="exp-period">2022 — Present</div>
+    </div>
+    <div class="exp-content">
+      <h3>AI Architect & Engineer</h3>
+      <p>Designed and stood up cloud architecture for the data & AI team. Building GenAI and data systems across global supply chain operations, from Databricks Lakehouse to production AI interfaces.</p>
+    </div>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-meta">
+      <div class="exp-company">Wayfair</div>
+      <div class="exp-period">2018 — 2022</div>
+    </div>
+    <div class="exp-content">
+      <h3>Software Engineer — Transportation Last Mile</h3>
+      <p>Built and shipped production systems across 50+ delivery centers. Delivery route planning, warehouse tooling, and incident response at scale.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section>
+  <div class="section-eyebrow">Projects</div>
+  <h2>Selected work</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-tag">J&J Vision · Data Engineering</div>
+      <h3>Cycle Time Data Model</h3>
+      <p>Integrated 10+ source systems tracking 7B+ lenses/year. Surfaced priority areas across the contact lens production process.</p>
+      <div class="project-metric">↓ 89.6% reduction in 95th-percentile cycle time in 1 month</div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">Wayfair · Systems Engineering</div>
+      <h3>Route Processing Rearchitecture</h3>
+      <p>Rearchitected delivery route planning with a safe fallback migration strategy.</p>
+      <div class="project-metric">30 min → &lt;1 min · saved 30+ min/warehouse/day</div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">J&J Vision · Cloud Architecture</div>
+      <h3>Databricks Lakehouse</h3>
+      <p>Designed and stood up Medallion architecture enabling scalable analytics across all supply chain functions.</p>
+      <div class="project-metric">Foundation for all data & AI workloads across the team</div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">J&J Vision · GenAI</div>
+      <h3>GenAI Supply Chain Interface</h3>
+      <p>Natural language interface via Databricks AI/BI Genie for querying global backorder status and identifying mitigation actions.</p>
+      <div class="project-metric">Reduced manual analysis · accelerated response time</div>
+    </div>
+
+    <div class="project-card" style="grid-column: span 2;">
+      <div class="project-tag">Wayfair · Full Stack</div>
+      <h3>Warehouse Door Utilization Tool</h3>
+      <p>Built cross-functionally and integrated with Wayfair's receiving scanning app and driver app. Piloted and launched to all 50+ delivery centers.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section>
+  <div class="section-eyebrow">Contact</div>
+  <h2>Let's connect</h2>
+  <div class="contact-block">
+    <p>Interested in working together or just want to say hello? I'd love to hear from you.</p>
+    <button class="btn-primary">Send a Message</button>
+  </div>
+</section>
+
+</body>
+</html>

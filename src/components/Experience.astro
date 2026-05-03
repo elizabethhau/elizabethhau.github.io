@@ -1,0 +1,125 @@
+---
+const experiences = [
+  {
+    company: 'J&J Vision',
+    period: '2022 — Present',
+    role: 'AI Architect & Engineer',
+    description:
+      'Designed and stood up cloud architecture for the data & AI team. Building GenAI and data systems across global supply chain operations, from Databricks Lakehouse to production AI interfaces.',
+  },
+  {
+    company: 'Wayfair',
+    period: '2016 — 2020',
+    role: 'Software Engineer — Transportation Last Mile',
+    description:
+      'Built and shipped production systems across 50+ delivery centers. Delivery route planning, warehouse tooling, and incident response at scale.',
+  },
+  {
+    company: 'MIT — Leaders for Global Operations (LGO)',
+    period: '2020 — 2022',
+    role: 'M.Eng + MBA · CS & Management',
+    description: '',
+  },
+];
+---
+
+<section id="experience">
+  <div class="section-label">// 03 &nbsp; experience</div>
+  <h2>Where I've worked</h2>
+
+  {experiences.map((exp, i) => (
+    <div class={`exp-item${i === experiences.length - 1 ? ' last' : ''}`}>
+      <div class="exp-meta">
+        <div class="exp-company">{exp.company}</div>
+        <div class="exp-period">{exp.period}</div>
+      </div>
+      <div class="exp-content">
+        <h3>{exp.role}</h3>
+        {exp.description && <p>{exp.description}</p>}
+      </div>
+    </div>
+  ))}
+</section>
+
+<style>
+  section {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 72px 56px;
+    border-top: 1px solid var(--border);
+  }
+
+  h2 {
+    font-family: var(--font-sans);
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 44px;
+    color: var(--text-primary);
+  }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 36px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .exp-item.last {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .exp-meta {
+    padding-top: 3px;
+  }
+
+  .exp-company {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--accent);
+    margin-bottom: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  .exp-period {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .exp-content h3 {
+    font-family: var(--font-sans);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+  }
+
+  .exp-content p {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+  }
+
+  @media (max-width: 768px) {
+    section {
+      padding: 56px 24px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 32px;
+    }
+
+    .exp-item {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+  }
+</style>

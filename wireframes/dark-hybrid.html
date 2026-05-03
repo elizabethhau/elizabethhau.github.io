@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wireframe C — Dark Hybrid</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #0d1117;
+    --bg-surface: #161b22;
+    --bg-card: #0d1117;
+    --border: #30363d;
+    --accent: #00ff88;
+    --accent-dim: rgba(0, 255, 136, 0.08);
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --text-muted: #484f58;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    /* Option A: dot-grid background */
+    background-image: radial-gradient(circle, #1e2530 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* ── NAV: Option A personality (monospace, sharp) ── */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 56px;
+    background: rgba(13, 17, 23, 0.94);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(8px);
+  }
+
+  .nav-logo {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: bold;
+    letter-spacing: 0.04em;
+  }
+
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 108px 56px 88px;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+
+  /* Option A: monospace label with // */
+  .hero-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  /* Option B: large, clean sans-serif name */
+  .hero h1 {
+    font-family: var(--font-sans);
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+  }
+
+  /* Hybrid: tagline in sans-serif, accent words highlighted */
+  .hero-tagline {
+    font-family: var(--font-sans);
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-tagline strong { color: var(--accent); font-weight: 500; }
+
+  /* Option B: sans-serif sub */
+  .hero-sub {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    color: var(--text-muted);
+    max-width: 500px;
+    margin-bottom: 48px;
+    line-height: 1.7;
+  }
+
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  /* Option A: sharp edges on buttons */
+  .btn-primary {
+    background: var(--accent);
+    color: #0d1117;
+    padding: 12px 28px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--accent);
+    padding: 12px 28px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    border: 1px solid var(--accent);
+    cursor: pointer;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 72px 56px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Option A: // section label in monospace */
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  /* Option B: clean sans-serif heading */
+  h2 {
+    font-family: var(--font-sans);
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 44px;
+    color: var(--text-primary);
+  }
+
+  /* ── ABOUT ── */
+  /* Option B: readable sans-serif body */
+  .about-text {
+    font-family: var(--font-sans);
+    font-size: 17px;
+    color: var(--text-secondary);
+    max-width: 640px;
+    line-height: 1.8;
+  }
+
+  .about-text strong { color: var(--text-primary); font-weight: 600; }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  /* Option A: sharp-edged cards */
+  .skill-group {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    padding: 22px 24px;
+  }
+
+  /* Option A: monospace group title */
+  .skill-group-title {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  /* Hybrid: sans-serif tag text, Option A color treatment */
+  .skill-tag {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--text-secondary);
+    background: var(--accent-dim);
+    border: 1px solid rgba(0, 255, 136, 0.15);
+    padding: 4px 12px;
+  }
+
+  /* ── EXPERIENCE ── */
+  .exp-item {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 36px;
+    margin-bottom: 44px;
+    padding-bottom: 44px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .exp-meta { padding-top: 3px; }
+
+  /* Option A: monospace company name in accent */
+  .exp-company {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--accent);
+    margin-bottom: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  /* Option B: sans-serif period */
+  .exp-period {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  /* Option B: sans-serif content */
+  .exp-content h3 {
+    font-family: var(--font-sans);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+  }
+
+  .exp-content p {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+  }
+
+  /* ── PROJECTS ── */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* Option A: sharp-edged cards */
+  .project-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    padding: 26px;
+  }
+
+  .project-card:hover { border-color: var(--accent); }
+
+  /* Option A: monospace tag */
+  .project-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  /* Option B: clean sans-serif title */
+  .project-card h3 {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+  }
+
+  /* Option B: sans-serif description */
+  .project-card p {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+  }
+
+  /* Option A: accent metric block with left border */
+  .project-metric {
+    margin-top: 16px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border-left: 2px solid var(--accent);
+    padding: 7px 12px;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── CONTACT ── */
+  /* Option A: sharp-edged block */
+  .contact-block {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    padding: 52px;
+    text-align: center;
+  }
+
+  /* Option A: monospace availability tag */
+  .contact-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border: 1px solid rgba(0, 255, 136, 0.25);
+    padding: 4px 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  /* Option B: readable sans-serif body */
+  .contact-block p {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 400px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+
+<!-- Option A nav personality -->
+<nav>
+  <span class="nav-logo">elizabeth_hau.sh</span>
+  <div class="nav-links">
+    <a href="#">about</a>
+    <a href="#">skills</a>
+    <a href="#">experience</a>
+    <a href="#">projects</a>
+    <a href="#">contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">// available for opportunities</div>
+  <!-- Option B: large clean sans-serif name -->
+  <h1>Elizabeth Hau</h1>
+  <!-- Hybrid tagline: sans-serif body, accent color on key phrases -->
+  <p class="hero-tagline">
+    <strong>Software engineer.</strong> Cloud architect. <strong>AI engineer.</strong>
+  </p>
+  <p class="hero-sub">The full stack, from infrastructure to intelligence.</p>
+  <!-- Option A: sharp buttons -->
+  <div class="hero-ctas">
+    <button class="btn-primary">Download Resume</button>
+    <button class="btn-outline">Get in Touch</button>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section>
+  <!-- Option A: // label -->
+  <div class="section-label">// 01 &nbsp; about</div>
+  <!-- Option B: clean h2 -->
+  <h2>Building AI systems end-to-end</h2>
+  <!-- Option B: readable sans-serif body -->
+  <p class="about-text">
+    AI Architect & Engineer at <strong>J&J Vision</strong>, designing and building cloud-native
+    data and AI systems for global supply chain operations. Former Software Engineer at
+    <strong>Wayfair</strong> (Transportation Last Mile). <strong>MIT LGO</strong> — dual CS + MBA.
+    I design the systems I build.
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section>
+  <div class="section-label">// 02 &nbsp; skills & tech</div>
+  <h2>What I work with</h2>
+  <div class="skills-grid">
+    <!-- Option A: sharp cards + monospace titles; Option B: sans-serif tags -->
+    <div class="skill-group">
+      <div class="skill-group-title">Languages</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Java</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Cloud & Data</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Databricks</span>
+        <span class="skill-tag">Spark</span>
+        <span class="skill-tag">Azure</span>
+        <span class="skill-tag">Lakehouse</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">AI / ML</div>
+      <div class="skill-tags">
+        <span class="skill-tag">GenAI</span>
+        <span class="skill-tag">RAG</span>
+        <span class="skill-tag">Scikit-learn</span>
+        <span class="skill-tag">Keras</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section>
+  <div class="section-label">// 03 &nbsp; experience</div>
+  <h2>Where I've worked</h2>
+
+  <div class="exp-item">
+    <!-- Option A: monospace accent company name -->
+    <div class="exp-meta">
+      <div class="exp-company">J&J Vision</div>
+      <div class="exp-period">2022 — Present</div>
+    </div>
+    <!-- Option B: sans-serif content -->
+    <div class="exp-content">
+      <h3>AI Architect & Engineer</h3>
+      <p>Designed and stood up cloud architecture for the data & AI team. Building GenAI and data systems across global supply chain operations, from Databricks Lakehouse to production AI interfaces.</p>
+    </div>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-meta">
+      <div class="exp-company">Wayfair</div>
+      <div class="exp-period">2018 — 2022</div>
+    </div>
+    <div class="exp-content">
+      <h3>Software Engineer — Transportation Last Mile</h3>
+      <p>Built and shipped production systems across 50+ delivery centers. Delivery route planning, warehouse tooling, and incident response at scale.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section>
+  <div class="section-label">// 04 &nbsp; projects</div>
+  <h2>Selected work</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <!-- Option A: monospace tag -->
+      <div class="project-tag">J&J Vision · Data Engineering</div>
+      <!-- Option B: sans-serif title + description -->
+      <h3>Cycle Time Data Model</h3>
+      <p>Integrated 10+ source systems tracking 7B+ lenses/year. Surfaced priority areas across the contact lens production process.</p>
+      <!-- Option A: accent metric block -->
+      <div class="project-metric">↓ 89.6% reduction in 95th-percentile cycle time in 1 month</div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">Wayfair · Systems Engineering</div>
+      <h3>Route Processing Rearchitecture</h3>
+      <p>Rearchitected delivery route planning with a safe fallback migration strategy.</p>
+      <div class="project-metric">30 min → &lt;1 min · saved 30+ min/warehouse/day</div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">J&J Vision · Cloud Architecture</div>
+      <h3>Databricks Lakehouse</h3>
+      <p>Designed and stood up Medallion architecture enabling scalable analytics across all supply chain functions.</p>
+      <div class="project-metric">Foundation for all data & AI workloads across the team</div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">J&J Vision · GenAI</div>
+      <h3>GenAI Supply Chain Interface</h3>
+      <p>Natural language interface via Databricks AI/BI Genie for querying global backorder status and identifying mitigation actions.</p>
+      <div class="project-metric">Reduced manual analysis · accelerated response time</div>
+    </div>
+
+    <div class="project-card" style="grid-column: span 2;">
+      <div class="project-tag">Wayfair · Full Stack</div>
+      <h3>Warehouse Door Utilization Tool</h3>
+      <p>Built cross-functionally and integrated with Wayfair's receiving scanning app and driver app. Piloted and launched to all 50+ delivery centers.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section>
+  <div class="section-label">// 05 &nbsp; contact</div>
+  <h2>Let's connect</h2>
+  <!-- Option A: sharp block + monospace tag; Option B: sans-serif body -->
+  <div class="contact-block">
+    <div class="contact-tag">// open to opportunities</div>
+    <p>Interested in working together or just want to say hello? I'd love to hear from you.</p>
+    <button class="btn-primary">Say Hello</button>
+  </div>
+</section>
+
+</body>
+</html>

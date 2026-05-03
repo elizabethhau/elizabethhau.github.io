@@ -1,0 +1,116 @@
+---
+const skills = [
+  {
+    category: 'Languages',
+    items: ['Python', 'SQL', 'JavaScript', 'Java'],
+  },
+  {
+    category: 'Cloud & Data',
+    items: ['Azure', 'Databricks', 'Spark', 'Delta Lake', 'Azure AI Foundry'],
+  },
+  {
+    category: 'AI / ML',
+    items: ['Scikit-learn', 'Keras', 'NLP', 'LLMs', 'RAG', 'Prompt Engineering'],
+  },
+  {
+    category: 'Data & AI Frameworks',
+    items: ['Pandas', 'PySpark', 'LangChain', 'Streamlit'],
+  },
+  {
+    category: 'Architecture',
+    items: ['Medallion Architecture', 'Data Lakehouse', 'ETL/ELT', 'Data Modeling', 'Cloud-native Architecture'],
+  },
+];
+---
+
+<section id="skills">
+  <div class="section-label">// 02 &nbsp; skills & tech</div>
+  <h2>What I work with</h2>
+  <div class="skills-grid">
+    {skills.map((group) => (
+      <div class="skill-group">
+        <div class="skill-group-title">{group.category}</div>
+        <div class="skill-tags">
+          {group.items.map((item) => (
+            <span class="skill-tag">{item}</span>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  section {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 72px 56px;
+    border-top: 1px solid var(--border);
+  }
+
+  h2 {
+    font-family: var(--font-sans);
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 44px;
+    color: var(--text-primary);
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .skill-group {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    padding: 22px 24px;
+  }
+
+  .skill-group-title {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .skill-tag {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--text-secondary);
+    background: var(--accent-dim);
+    border: 1px solid rgba(0, 255, 136, 0.15);
+    padding: 4px 12px;
+  }
+
+  @media (max-width: 1024px) {
+    .skills-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    section {
+      padding: 56px 24px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 32px;
+    }
+
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

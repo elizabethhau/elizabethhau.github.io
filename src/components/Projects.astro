@@ -1,0 +1,189 @@
+---
+interface Project {
+  tag: string;
+  title: string;
+  description: string;
+  metric: string;
+  url?: string;
+  wide?: boolean;
+}
+
+const projects: Project[] = [
+  {
+    tag: 'J&J Vision · Data Engineering',
+    title: 'Cycle Time Data Model',
+    description:
+      'Integrated 10+ source systems tracking 7B+ lenses/year. Surfaced priority areas across the contact lens production process.',
+    metric: '↓ 89.6% reduction in 95th-percentile cycle time in 1 month',
+  },
+  {
+    tag: 'Wayfair · Systems Engineering',
+    title: 'Route Processing Rearchitecture',
+    description:
+      'Rearchitected delivery route planning with a safe fallback migration strategy.',
+    metric: '30 min → <1 min · saved 30+ min/warehouse/day',
+  },
+  {
+    tag: 'J&J Vision · Cloud Architecture',
+    title: 'Databricks Lakehouse',
+    description:
+      'Designed and stood up Medallion architecture enabling scalable analytics across all supply chain functions.',
+    metric: 'Foundation for all data & AI workloads across the team',
+  },
+  {
+    tag: 'J&J Vision · GenAI',
+    title: 'GenAI Supply Chain Interface',
+    description:
+      'Natural language interface via Databricks AI/BI Genie for querying global backorder status and identifying mitigation actions.',
+    metric: 'Reduced manual analysis · accelerated response time',
+  },
+  {
+    tag: 'Wayfair · Full Stack',
+    title: 'Warehouse Door Utilization Tool',
+    description:
+      'Built cross-functionally and integrated with Wayfair\'s receiving scanning app and driver app. Piloted and launched to all 50+ delivery centers.',
+    metric: '',
+    wide: true,
+  },
+];
+---
+
+<section id="projects">
+  <div class="section-label">// 04 &nbsp; projects</div>
+  <h2>Selected work</h2>
+  <div class="projects-grid">
+    {projects.map((project) => (
+      <div class={`project-card${project.wide ? ' wide' : ''}`}>
+        <div class="project-tag">{project.tag}</div>
+        <div class="project-header">
+          <h3>{project.title}</h3>
+          {project.url && (
+            <a href={project.url} target="_blank" rel="noopener noreferrer" class="project-link" aria-label={`View ${project.title}`}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+          )}
+        </div>
+        <p>{project.description}</p>
+        {project.metric && (
+          <div class="project-metric">{project.metric}</div>
+        )}
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  section {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 72px 56px;
+    border-top: 1px solid var(--border);
+  }
+
+  h2 {
+    font-family: var(--font-sans);
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 44px;
+    color: var(--text-primary);
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .project-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    padding: 26px;
+    transition: border-color 0.15s;
+  }
+
+  .project-card:hover {
+    border-color: var(--accent);
+  }
+
+  .project-card.wide {
+    grid-column: span 2;
+  }
+
+  .project-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .project-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .project-card h3 {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+  }
+
+  .project-link {
+    color: var(--text-muted);
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: color 0.15s;
+  }
+
+  .project-link:hover {
+    color: var(--accent);
+  }
+
+  .project-card p {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+  }
+
+  .project-metric {
+    margin-top: 16px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border-left: 2px solid var(--accent);
+    padding: 7px 12px;
+    letter-spacing: 0.02em;
+  }
+
+  @media (max-width: 768px) {
+    section {
+      padding: 56px 24px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 32px;
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .project-card.wide {
+      grid-column: span 1;
+    }
+  }
+</style>
