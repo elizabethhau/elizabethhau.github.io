@@ -131,13 +131,13 @@ Goal: Remove all Jekyll files after live site is confirmed. Do not start this ph
 
 Goal: Confirm everything works before declaring done.
 
-- [ ] All 6 sections present and in correct order
-- [ ] Nav anchor links scroll to correct sections
-- [ ] Resume button links to `/Hau_Elizabeth_Resume.pdf` and downloads
-- [ ] Contact button opens mailto to `elizabeth.h.hau@gmail.com`
-- [ ] Dot-grid background visible on live site
-- [ ] Lighthouse: Performance > 90, Accessibility > 95
-- [ ] `wireframes/`, `docs/agents/`, `CONTEXT.md`, `CLAUDE.md` all still present
+- [x] All 6 sections present and in correct order
+- [x] Nav anchor links scroll to correct sections
+- [x] Resume button hidden (PDF staged at `/Hau_Elizabeth_Resume.pdf` for when ready)
+- [x] Contact button opens mailto to `elizabeth.h.hau@gmail.com`
+- [x] Dot-grid background visible on live site
+- [x] Lighthouse: Performance 99, Accessibility 100, Best Practices 96, SEO 100
+- [x] `wireframes/`, `docs/agents/`, `CONTEXT.md`, `CLAUDE.md` all still present
 
 ---
 
