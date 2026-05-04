@@ -107,9 +107,9 @@ Goal: Ensure layout degrades gracefully on mobile and tablet.
 Goal: Automated deploy to GitHub Pages on push to `master`.
 
 - [x] Create `.github/workflows/deploy.yml` (checkout → setup-node → npm ci → astro build → upload artifact → deploy-pages)
-- [ ] **Manual step (in browser):** GitHub repo Settings > Pages > Source → set to "GitHub Actions"
-- [ ] Push and confirm Actions workflow succeeds
-- [ ] Verify live site at `https://elizabethhau.github.io`
+- [x] **Manual step (in browser):** GitHub repo Settings > Pages > Source → set to "GitHub Actions"
+- [x] Push and confirm Actions workflow succeeds
+- [x] Verify live site at `https://elizabethhau.github.io`
 
 ---
 
@@ -117,13 +117,13 @@ Goal: Automated deploy to GitHub Pages on push to `master`.
 
 Goal: Remove all Jekyll files after live site is confirmed. Do not start this phase until Phase 6 step 4 is verified.
 
-- [ ] Delete Jekyll config files: `Gemfile`, `Gemfile.lock`, `_octopress.yml`, `_config.yml`, `Gruntfile.js`, `feed.xml`, `404.md`
-- [ ] Delete Jekyll directories: `_layouts/`, `_includes/`, `_sass/`, `_posts/`, `_data/`, `_templates/`
-- [ ] Delete old page directories: `about/`, `contact/`, `course-work/`, `posts/`, `projects/`, `theme-setup/`
-- [ ] Delete build artifacts: `_site/`, `.sass-cache/`
-- [ ] Delete old assets: `images/`, `assets/`
-- [ ] Delete `index.md` (replaced by `src/pages/index.astro`)
-- [ ] Commit all deletions, confirm deploy still succeeds
+- [x] Delete Jekyll config files: `Gemfile`, `Gemfile.lock`, `_octopress.yml`, `_config.yml`, `Gruntfile.js`, `feed.xml`, `404.md`
+- [x] Delete Jekyll directories: `_layouts/`, `_includes/`, `_sass/`, `_posts/`, `_data/`, `_templates/`
+- [x] Delete old page directories: `about/`, `contact/`, `course-work/`, `posts/`, `projects/`, `theme-setup/`
+- [x] Delete build artifacts: `_site/`, `.sass-cache/`
+- [x] Delete old assets: `images/`, `assets/`
+- [x] Delete `index.md` (replaced by `src/pages/index.astro`)
+- [x] Commit all deletions, confirm deploy still succeeds
 
 ---
 
